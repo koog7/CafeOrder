@@ -23,14 +23,14 @@ const ORDERINGS: Order[] = [
     { name: 'Cola', priceForOne: 40, img: cola, className: 'cola' },
 ];
 
-const AddItems = () => {
+const AddItems = ({ onAddItem }: { onAddItem: (name: string) => void }) => {
     return (
         <div className="container">
             <fieldset>
                 <legend>Add item:</legend>
                 <div className="grid">
                     {ORDERINGS.map((item) => (
-                        <a className="card" href={'#'} key={item.name}>
+                        <a className="card" href={'#'} key={item.name} onClick={() => onAddItem(item.name)}>
                             <img className="card-img" width="80px" src={item.img} alt={item.name}/>
                             <div className="card-content">
                                 <p className="card-title">{item.name}</p>

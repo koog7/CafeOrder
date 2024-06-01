@@ -11,7 +11,7 @@ interface OrderItem {
 
 function App() {
 
-    const [order, setOrder] = useState<{ name: string; count: number }[]>([]);
+    const [order, setOrder] = useState<OrderItem[]>([]);
 
     const handleAddItem = (itemName: string, itemPrice: number) => {
         setOrder(prevOrder => {
@@ -26,10 +26,14 @@ function App() {
         });
     };
 
+    const handleRemoveItem = (itemName: string) => {
+        setOrder(prevOrder => prevOrder.filter(item => item.name !== itemName));
+    };
+
   return (
     <>
         <div className={'cafe-block'}>
-            <OrderDetails order={order} />
+            <OrderDetails order={order} handleRemoveItem={handleRemoveItem} />
             <AddItems onAddItem={handleAddItem} />
         </div>
     </>

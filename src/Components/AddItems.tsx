@@ -1,4 +1,3 @@
-// import React from "react";
 import hamburger from '/src/assets/hamburger.png';
 import cheeseburger from '/src/assets/cheeseburger.png';
 import fries from '/src/assets/fries.png';
@@ -11,26 +10,25 @@ interface Order {
     name: string;
     priceForOne: number;
     img: string;
-    className: string;
 }
 
 const ORDERINGS: Order[] = [
-    { name: 'Hamburger', priceForOne: 80, img: hamburger, className: 'hamburger' },
-    { name: 'Tea', priceForOne: 50, img: tea, className: 'tea' },
-    { name: 'Cheeseburger', priceForOne: 90, img: cheeseburger, className: 'cheeseburger' },
-    { name: 'Coffee', priceForOne: 70, img: coffee, className: 'coffee' },
-    { name: 'Fries', priceForOne: 45, img: fries, className: 'fries' },
-    { name: 'Cola', priceForOne: 40, img: cola, className: 'cola' },
+    { name: 'Hamburger', priceForOne: 80, img: hamburger},
+    { name: 'Tea', priceForOne: 50, img: tea},
+    { name: 'Cheeseburger', priceForOne: 90, img: cheeseburger},
+    { name: 'Coffee', priceForOne: 70, img: coffee},
+    { name: 'Fries', priceForOne: 45, img: fries},
+    { name: 'Cola', priceForOne: 40, img: cola},
 ];
 
-const AddItems = ({ onAddItem }: { onAddItem: (name: string) => void }) => {
+const AddItems = ({ onAddItem }: { onAddItem: (name: string, price: number) => void }) => {
     return (
         <div className="container">
             <fieldset>
                 <legend>Add item:</legend>
                 <div className="grid">
                     {ORDERINGS.map((item) => (
-                        <a className="card" href={'#'} key={item.name} onClick={() => onAddItem(item.name)}>
+                        <a className="card" href={'#'} key={item.name} onClick={() => onAddItem(item.name, item.priceForOne)}>
                             <img className="card-img" width="80px" src={item.img} alt={item.name}/>
                             <div className="card-content">
                                 <p className="card-title">{item.name}</p>

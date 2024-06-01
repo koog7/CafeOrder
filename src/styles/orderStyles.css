@@ -3,7 +3,11 @@
     justify-content: center;
     width: 300px;
 }
-
+.cafe-block{
+    display: flex;
+    flex-direction: row;
+    gap: 200px;
+}
 fieldset {
     border: 1px solid #ccc;
     padding: 10px;
@@ -24,6 +28,12 @@ fieldset {
     padding: 10px;
     border-radius: 5px;
     width: 200px;
+}
+.card:hover{
+    -webkit-box-shadow: inset 3px -2px 37px -15px rgba(255,255,255,1);
+    -moz-box-shadow: inset 3px -2px 37px -15px rgba(255,255,255,1);
+    box-shadow: inset 3px -2px 37px -15px rgba(255,255,255,1);
+    transition: 0.3s;
 }
 
 .card-img {

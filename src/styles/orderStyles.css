@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    justify-content: center;
+    width: 300px;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 0.1fr);
+    gap: 10px;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px;
+}
+
+.card-img {
+    margin-right: 10px;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.card-price {
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+span{
+    color: orange;
+}
